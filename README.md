@@ -1,2 +1,2 @@
 # meetarang
-Meetarang is a simple web application for Meetup organizers
+Meetarang is a simple web application for Meetup organizers.
