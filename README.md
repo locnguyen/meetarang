@@ -12,5 +12,8 @@ See the scripts in package.json for details
 `npm run release` will build an uglified app into the dist/ directory
 
 ## Major dependencies
-
 - [Webpack](https://webpack.github.io)
+- [AngularJS](https://angularjs.org/)
+- [Angular Material](https://material.angularjs.org/)
+- [UI-Router](https://github.com/angular-ui/ui-router)
+- [Sass](http://sass-lang.com/)
