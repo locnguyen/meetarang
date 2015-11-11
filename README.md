@@ -27,3 +27,4 @@ See the scripts in package.json for details
 - [Angular Material](https://material.angularjs.org/)
 - [UI-Router](https://github.com/angular-ui/ui-router)
 - [Sass](http://sass-lang.com/)
+- [HapiJS](http://hapijs.com/)
