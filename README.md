@@ -11,6 +11,16 @@ See the scripts in package.json for details
 
 `npm run release` will build an uglified app into the dist/ directory
 
+## Style Guide
+- 4 spaces instead of tabs ;)
+- Prefer ES6 over ES5
+
+### Frontend
+- Follow John Papa's [Angular Style Guide](https://github.com/johnpapa/angular-styleguide)
+
+### Backend
+- Develop each API feature as a Hapi plugin [[link](https://twitter.com/hapijs/status/568547679174660096)]
+
 ## Major dependencies
 - [Webpack](https://webpack.github.io)
 - [AngularJS](https://angularjs.org/)
