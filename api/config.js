@@ -1,5 +1,5 @@
 module.exports = {
-    local: {
+    development: {
         port: 9000,
         env: 'development'
     }
