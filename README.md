@@ -13,6 +13,16 @@ See the scripts in package.json for details
 
 -npm run api' will start API
 
+## Vagrant VM
+
+The project uses [Couchbase](http://couchbase.com) for persistence. To avoid the sideshow of helping contributors set it up on their special snowflakey systems we are providing a Vagrant VM that installs all the backend things.
+
+1. Install [Vagrant](https://vagrantup.com).
+1. Install [VirutalBox](https://virtualbox.org).
+1. Run `vagrant up`.
+1. After the Ubuntu VM is created and Couchbase is installed, open your browser and go to [http://localhost:8091](http://localhost:8091).
+1. Accept the defaults for every wizard step. In Step 5 use "password" for the password field.
+
 ## Style Guide
 - 4 spaces instead of tabs ;)
 - Prefer ES6 over ES5
