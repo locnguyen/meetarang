@@ -6,7 +6,8 @@
   "scripts": {
     "test": "NODE_ENV=test karma start",
     "start": "node node_modules/.bin/webpack-dev-server --content-base app",
-    "release": "NODE_ENV=production node node_modules/.bin/webpack && cp app/index.html dist/index.html"
+    "release": "NODE_ENV=production node node_modules/.bin/webpack && cp app/index.html dist/index.html",
+    "api": "NODE_ENV=development nodemon api"
   },
   "repository": {
     "type": "git",
@@ -47,10 +48,13 @@
   "dependencies": {
     "angular": "^1.4.7",
     "angular-material": "^0.11.4",
+    "angular-messages": "^1.4.7",
     "angular-ui-router": "^0.2.15",
+    "app-module-path": "^1.0.4",
     "boom": "^3.0.0",
     "hapi": "^11.1.0",
     "joi": "^7.0.0",
+    "nodemon": "^1.8.1",
     "wreck": "^7.0.0"
   }
 }

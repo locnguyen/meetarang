@@ -11,6 +11,8 @@ See the scripts in package.json for details
 
 `npm run release` will build an uglified app into the dist/ directory
 
+-npm run api' will start API
+
 ## Style Guide
 - 4 spaces instead of tabs ;)
 - Prefer ES6 over ES5
@@ -22,6 +24,7 @@ See the scripts in package.json for details
 - Develop each API feature as a Hapi plugin [[link](https://twitter.com/hapijs/status/568547679174660096)]
 
 ## Major dependencies
+- [NodeJS >= 4.0](https://nodejs.org)
 - [Webpack](https://webpack.github.io)
 - [AngularJS](https://angularjs.org/)
 - [Angular Material](https://material.angularjs.org/)

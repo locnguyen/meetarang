@@ -1,0 +1,32 @@
+<md-content layout="column" layout-align="center center" style="min-height:500px;">
+    <md-card style="min-width:300px;">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2 class="md-flex">Log in</h2>
+            </div>
+        </md-toolbar>
+        <md-card-content>
+            <form name="loginForm">
+                <md-input-container>
+                    <label for="username">Username</label>
+                    <input type="email" name="username" id="username" required>
+                    <div ng-messages="loginForm.username.$error">
+                        <div ng-message="required">This is required!</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required>
+
+                    <div ng-messages="loginForm.password.$error">
+                        <div ng-message="required">This is required!</div>
+                    </div>
+                </md-input-container>
+
+                <md-button class="md-raised md-primary" ng-click="loginPage.doLogin()">Log in</md-button>
+            </form>
+        </md-card-content>
+    </md-card>
+</md-content>
+
