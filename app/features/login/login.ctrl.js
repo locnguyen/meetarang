@@ -1,20 +1,19 @@
 'use strict';
 
-class LoginController {
+export default function (ngModule) {
+    class LoginController {
 
-    constructor() {
+        constructor() {
 
+        }
+
+        doLogin() {
+            console.log('login');
+        }
     }
 
-    doLogin() {
-        console.log('login');
-    }
+    LoginController.$inject = [];
+
+    ngModule
+        .controller('LoginController', LoginController);;
 }
-
-LoginController.$inject = [];
-
-angular
-    .module('meetarang.features.login.ctrl', [])
-    .controller('LoginController', LoginController);
-
-export {LoginController}
