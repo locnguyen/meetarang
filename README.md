@@ -1,6 +1,21 @@
 # meetarang
 Meetarang is a simple web application for Meetup organizers.
 
+## Configuration
+The API layer requires a configuration file in your home directory. You will need to create it and add these configurations
+
+~/.meetarang.json
+```
+{
+    "meetup": {
+        "oauthClientId": "your_meetup_oauth_client_id",
+        "oauthClientSecret": "your_meetup_oauth_consumer_secret",
+        "apiKey": "your_meetup_api_key"
+    },
+    "jwtKey": "some_securely_generated_token"
+}
+```
+
 ## Useful commands
 
 See the scripts in package.json for details

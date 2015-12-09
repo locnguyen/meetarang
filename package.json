@@ -55,7 +55,9 @@
     "app-module-path": "^1.0.4",
     "boom": "^3.0.0",
     "hapi": "^11.1.0",
+    "hapi-auth-jwt": "^4.0.0",
     "joi": "^7.0.0",
+    "jsonwebtoken": "^5.4.1",
     "nodemon": "^1.8.1",
     "wreck": "^7.0.0"
   }
