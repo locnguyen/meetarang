@@ -7,7 +7,7 @@
         </md-toolbar>
         <md-card-content>
             <div style="text-align: center">
-                <div id="dashboardSpinner" spinner spin-when="true"></div>
+                <div id="dashboardSpinner" spinner spin-when="vm.loadingData"></div>
             </div>
 
             <pre ng-bind="vm.data | json"></pre>
