@@ -11,6 +11,10 @@ export default function (ngModule) {
             return angular.isDefined(this.$cookies.get('token'));
         }
 
+        getToken() {
+            return this.$cookies.get('token');
+        }
+
         doLogin(code) {
             this.$http.post(`http://localhost:9000/oauth2/access?code=${code}`)
                 .then(res => this.$cookies.put('token', res.data.token));

@@ -17,14 +17,16 @@ function configUrl($locationProvider, $urlRouterProvider) {
     $locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise('/login');
 }
-configUrl.inject = ['$locationProvider', '$urlRouterProvider'];
+configUrl.$inject = ['$locationProvider', '$urlRouterProvider'];
 
 
 ngModule.run(applicationInit);
-function applicationInit(SessionService) {
+function applicationInit($http, SessionService) {
     SessionService.runAtAppStart();
+
+    $http.defaults.headers.common['Authorization'] = `Bearer ${SessionService.getToken()}`;
 }
-applicationInit.inject = ['SessionService'];
+applicationInit.$inject = ['$http', 'SessionService'];
 
 
 require('./common/services')(ngModule);
