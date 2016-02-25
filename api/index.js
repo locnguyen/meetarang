@@ -12,9 +12,8 @@ const server = new Hapi.Server({ app: config });
 server.connection({ port: config.port });
 
 server.register([
-    {
-        register: require('hapi-auth-jwt')
-    }
+    {register: require('hapi-auth-jwt')},
+    {register: require('h2o2')}
 ], (err) => {
     if (err) {
         console.log('Could not register all the Hapi plugins');
@@ -28,14 +27,10 @@ server.register([
 
 server.register(
     [
-        {
-            register: require('api/auth')
-        }
+        {register: require('api/auth')},
+        {register: require('api/proxy')}
     ],
     {
-        routes: {
-            prefix: '/proxy'
-        }
     },
     (err) => {
         if (err) {

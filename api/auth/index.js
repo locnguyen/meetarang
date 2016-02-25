@@ -6,7 +6,7 @@ const Boom = require('Boom');
 const jwt = require('jsonwebtoken');
 
 
-function register (server, options, next) {
+function register(server, options, next) {
     const meetup = server.settings.app.meetup;
 
     function getOauthParams(options) {
@@ -18,7 +18,7 @@ function register (server, options, next) {
         path: '/oauth2/authorize',
         config: {
             handler(request, reply) {
-                let url = `https:\/\/secure.meetup.com/oauth2/authorize?client_id=${meetup.oauthClientId}&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8080`;
+                let url = `${server.settings.app.meetup.authBase}/oauth2/authorize?client_id=${meetup.oauthClientId}&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8080`;
                 reply.redirect(url);
             }
         }
@@ -44,7 +44,7 @@ function register (server, options, next) {
                     payload: queryParams
                 };
 
-                Wreck.post(`${server.settings.app.meetup.apiBase}/oauth2/access`, config, (err, response, payload) => {
+                Wreck.post(`${server.settings.app.meetup.authBase}/oauth2/access`, config, (err, response, payload) => {
                     if (err) {
                         reply(Boom.badImplementation('Server error, could not complete authentication'));
                     }

@@ -9,7 +9,8 @@ let config = {
     development: {
         port: 9000,
         meetup: {
-            apiBase: 'https://secure.meetup.com'
+            authBase: 'https://secure.meetup.com',
+            apiBase: 'https://api.meetup.com'
         }
     },
     qa: {
