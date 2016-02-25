@@ -10,7 +10,7 @@ function register(server, options, next) {
     const meetup = server.settings.app.meetup;
 
     function getOauthParams(options) {
-        return `client_id=${meetup.oauthClientId}&client_secret=${meetup.oauthClientSecret}&grant_type=${options.grant_type}&redirect_uri=http%3A%2F%2Flocalhost%3A8080`;
+        return `client_id=${meetup.oauthClientId}&client_secret=${meetup.oauthClientSecret}&grant_type=${options.grant_type}&redirect_uri=http%3A%2F%2Flocalhost%3A8080/login`;
     }
 
     server.route({
@@ -18,7 +18,7 @@ function register(server, options, next) {
         path: '/oauth2/authorize',
         config: {
             handler(request, reply) {
-                let url = `${server.settings.app.meetup.authBase}/oauth2/authorize?client_id=${meetup.oauthClientId}&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8080`;
+                let url = `${server.settings.app.meetup.authBase}/oauth2/authorize?client_id=${meetup.oauthClientId}&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8080/login`;
                 reply.redirect(url);
             }
         }
