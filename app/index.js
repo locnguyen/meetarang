@@ -12,6 +12,7 @@ if (ON_TEST) {
 
 const ngModule = angular.module('meetarang', ['ngMaterial', 'ngMessages', 'ngCookies', 'ui.router']);
 
+
 ngModule.config(configUrl);
 function configUrl($locationProvider, $urlRouterProvider) {
     $locationProvider.html5Mode(true);
@@ -20,13 +21,31 @@ function configUrl($locationProvider, $urlRouterProvider) {
 configUrl.$inject = ['$locationProvider', '$urlRouterProvider'];
 
 
-ngModule.run(applicationInit);
-function applicationInit($http, SessionService) {
-    SessionService.runAtAppStart();
 
-    $http.defaults.headers.common['Authorization'] = `Bearer ${SessionService.getToken()}`;
+ngModule.run(applicationInit);
+function applicationInit(SessionService) {
+    SessionService.runAtAppStart();
 }
-applicationInit.$inject = ['$http', 'SessionService'];
+applicationInit.$inject = ['SessionService'];
+
+
+
+ngModule.factory('authInterceptor', ['UserService', function(UserService) {
+    return {
+        request(config) {
+            if (UserService.getToken()) {
+                config.headers.Authorization = `Bearer ${UserService.getToken()}`;
+            }
+            return config;
+        }
+    }
+}]);
+
+ngModule.config(configHttp);
+function configHttp($httpProvider) {
+    $httpProvider.interceptors.push('authInterceptor');
+    $httpProvider.interceptors = [...$httpProvider.interceptors, 'authInterceptor'];
+}
 
 
 require('./common/services')(ngModule);
