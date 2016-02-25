@@ -5,8 +5,10 @@ export default function(ngModule) {
 
             DashboardService.get()
                 .then(data => {
-                    this.data = data;
                     this.loadingData = false;
+                    this.data = data;
+                    let {name, description, event_url:eventUrl} = data.next_event;
+                    Object.assign(this, {name, description, eventUrl});
                 });
         }
     }

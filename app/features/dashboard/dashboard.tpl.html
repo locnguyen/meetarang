@@ -10,6 +10,12 @@
                 <div id="dashboardSpinner" spinner spin-when="vm.loadingData"></div>
             </div>
 
+            <div style="font-size: larger">
+                <h2 ng-bind="vm.name"></h2>
+                <div ng-bind-html="vm.description"></div>
+                <a href="{{vm.eventUrl}}">Event URL</a>
+            </div>
+
             <pre ng-bind="vm.data | json"></pre>
         </md-card-content>
     </md-card>

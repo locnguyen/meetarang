@@ -4,13 +4,14 @@ import 'angular-material/angular-material.scss';
 import 'angular-ui-router';
 import 'angular-messages';
 import 'angular-cookies';
+import 'angular-sanitize';
 
 if (ON_TEST) {
     // Babel won't let us use import syntax here
     require('angular-mocks/angular-mocks');
 }
 
-const ngModule = angular.module('meetarang', ['ngMaterial', 'ngMessages', 'ngCookies', 'ui.router']);
+const ngModule = angular.module('meetarang', ['ngMaterial', 'ngMessages', 'ngCookies', 'ngSanitize', 'ui.router']);
 
 
 ngModule.config(configUrl);
