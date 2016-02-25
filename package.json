@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test karma start",
-    "start": "node node_modules/.bin/webpack-dev-server --content-base app",
+    "start": "node webpackDevServer.js",
     "release": "NODE_ENV=production node node_modules/.bin/webpack && cp app/index.html dist/index.html",
     "api": "NODE_ENV=development nodemon api"
   },

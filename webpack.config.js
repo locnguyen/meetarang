@@ -1,10 +1,15 @@
-var webpack = require('webpack');
+'use strict';
+
+const webpack = require('webpack');
+const path = require('path');
+
 
 var config = {
     context: __dirname + '/app',
     entry: './index.js',
     output: {
-        path: __dirname + '/app',
+        publicPath: '/',
+        path: path.join(__dirname, 'app'),
         filename: 'bundle.js'
     },
 
