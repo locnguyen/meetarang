@@ -49,4 +49,5 @@ function configHttp($httpProvider) {
 
 
 require('./common/services')(ngModule);
+require('./common/directives')(ngModule);
 require('./features')(ngModule);

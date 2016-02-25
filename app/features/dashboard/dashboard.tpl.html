@@ -6,6 +6,10 @@
             </div>
         </md-toolbar>
         <md-card-content>
+            <div style="text-align: center">
+                <div id="dashboardSpinner" spinner spin-when="true"></div>
+            </div>
+
             <pre ng-bind="vm.data | json"></pre>
         </md-card-content>
     </md-card>
