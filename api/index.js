@@ -9,7 +9,7 @@ const Hapi = require('hapi');
 
 const server = new Hapi.Server({ app: config });
 
-server.connection({ port: config.port });
+server.connection({ port: config.port, routes: { cors: true }});
 
 server.register([
     {register: require('hapi-auth-jwt')},
