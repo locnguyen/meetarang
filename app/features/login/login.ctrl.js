@@ -2,18 +2,15 @@
 
 export default function (ngModule) {
     class LoginController {
-
-        constructor() {
-
-        }
-
-        doLogin() {
-            console.log('login');
+        constructor($location, SessionService) {
+            if ($location.search().code) {
+                SessionService.doLogin($location.search().code);
+            }
         }
     }
 
-    LoginController.$inject = [];
+    LoginController.$inject = ['$location', 'SessionService'];
 
     ngModule
-        .controller('LoginController', LoginController);;
+        .controller('LoginController', LoginController);
 }

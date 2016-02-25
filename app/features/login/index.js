@@ -13,7 +13,7 @@ export default function (ngModule) {
             url: '/login',
             views: {
                 '@': {
-                    controller: 'LoginController as loginPage',
+                    controller: 'LoginController as vm',
                     template: require('./login.tpl.html')
                 }
             }
